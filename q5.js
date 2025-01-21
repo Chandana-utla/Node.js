@@ -64,7 +64,7 @@ app.put('/users/update/:id', (req, res) => {
   const { id } = req.params;  
   const { name, email } = req.body;  
 
- const query = 'update users set name = ?, email = ? WHERE id = ?';
+ const query = 'update users set name = ?, email = ? where id = ?';
   connection.query(query, [name, email, id], (err, results) => {
     if (err) {
       console.log(err); 
